@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raúl Marín López - Portfolio</title>
+    
+    <!-- Google Fonts -->
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@600;700;800&display=swap');
+        
+        /* Responsive Font Sizes System */
+        :root {
+            --font-h1: 56px;
+            --font-h2: 32px;
+            --font-h3: 24px;
+            --font-body: 18px;
+            
+            /* Corporate Palette */
+            --color-bg: #FFFFFF;
+            --color-text: #333333;
+            --color-card-gray: #E0E0E0;
+            --color-accent: #1A428A;
+        }
+
+        /* Mobile screens (Smartphones) */
+        @media (max-width: 768px) {
+            :root {
+                --font-h1: 36px;
+                --font-h2: 24px;
+                --font-h3: 20px;
+                --font-body: 16px;
+            }
+        }
+
+        /* Base Styles */
+        body {
+            margin: 0;
+            padding: 40px 20px;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            font-family: 'Inter', sans-serif;
+            font-size: var(--font-body);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Typography */
+        h1, h2, h3, h4, h5, h6, summary {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-text);
+            margin: 0;
+        }
+
+        h1 { font-size: var(--font-h1); }
+        h2 { font-size: var(--font-h2); margin-bottom: 20px;}
+        h3 { font-size: var(--font-h3); color: var(--color-accent); text-align: center; padding: 15px 0;}
+        p { line-height: 1.6; white-space: pre-line; margin-top: 15px; }
+
+        /* Layout & Containers */
+        .main-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            width: 100%;
+            max-width: 800px;
+            align-items: center;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Cards */
+        .card {
+            width: 100%;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--color-accent);
+            box-sizing: border-box;
+        }
+        
+        .card-white { background-color: var(--color-bg); }
+        .card-gray { background-color: var(--color-card-gray); }
+
+        /* Profile Picture */
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background-color: var(--color-card-gray);
+            border: 4px solid var(--color-accent);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
+            color: var(--color-text);
+        }
+
+        /* Expandable Details (Accordion) */
+        .experience-item {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #CCCCCC;
+            padding-bottom: 15px;
+        }
+        
+        .experience-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        summary {
+            font-size: var(--font-body);
+            font-weight: 600;
+            cursor: pointer;
+            padding: 10px 0;
+            outline: none;
+            list-style: none; /* Hides default arrow */
+        }
+        
+        summary::-webkit-details-marker {
+            display: none; /* Hides default arrow in Safari/Chrome */
+        }
+
+        /* Smooth expansion animation */
+        details[open] summary ~ * {
+            animation: expandDetails 0.6s ease-out forwards;
+        }
+
+        @keyframes expandDetails {
+            0% { opacity: 0; max-height: 0; overflow: hidden; transform: translateY(-5px); }
+            100% { opacity: 1; max-height: 1000px; overflow: hidden; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-wrapper">
+        
+        <!-- Profile Picture -->
+        <div class="profile-pic">
+            <img src="perf.png" alt="Foto de perfil de Raúl Marín" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+
+        <!-- Header -->
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px;">
+            <h1>Raúl Marín López</h1>
+            <h3>Technical Project Manager | IoT Product Engineer | Python Developer</h3>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <span>Location: Guadalajara, Jalisco, Mexico</span>
+            <span>Email: pekoska17@gmail.com</span>
+            <span>Phone: +52 3311511421</span>
+            <span>Age: 35 years</span>
+        </div>
+
+        <!-- Professional Summary -->
+        <div class="card card-white">
+            <h2>Professional Summary</h2>
+            <p>Technical Project Manager & IoT Product Engineer with over 10 years of hybrid experience spanning telecommunications, hardware validation, and full product lifecycle management. Proven track record of scaling low-power IoT solutions from R&D to mass deployment, including the successful launch of 7,000+ field units across Latin America. Expert in bridging the gap between hardware, firmware, and web development teams. Strong background in 3GPP protocols, process automation via Python, and quality assurance. Combines strategic technical leadership with hands-on engineering skills to deliver robust, cost-effective, and highly reliable technological products.</p>
+        </div>
+
+        <!-- Professional Experience -->
+        <div class="card card-gray">
+            <h2>Professional Experience</h2>
+
+            <details class="experience-item">
+                <summary>Project Manager & QA Lead | S4IoT (Mar 2020 – Present)</summary>
+                <p>• Project Leadership & Product Launch: Promoted to Project Manager to lead cross-functional teams (HW, FW, and Web Platform). Directed the technical design and launch of the Athen-based IoT gas sensor, successfully deploying over 7,000 field units with a 5-year battery life and earning high customer ratings across major e-commerce platforms.
+
+                • Process Automation & Cost Reduction: Developed Python-based scripts and a custom GUI to automate device flashing, field failure reporting, and data metrics analysis. This initiative significantly reduced SMT factory production costs and minimized the need for manual technician labor.
+
+                • Firmware QA & IoT Innovation: Spearheaded firmware stability testing for the NXP KL17 MCU and Quectel BG96 modem. Optimized LTE connectivity via AT commands and 3GPP protocols, expanding the Athen platform into Smart Agriculture, Medical, and Asset Tracking.</p>
+            </details>
+
+            <details class="experience-item">
+                <summary>Field Application Engineer | UNISOC (Feb 2016 – Mar 2020)</summary>
+                <p>• Carrier Certification & Homologation: Led the homologation process for mobile devices across Latin America for major network operators including Telcel, Claro, Movistar, and Entel, acting as the primary technical liaison between regional clients and global R&D teams in China, Korea, the US, and Europe.
+
+                • Network Protocol Analysis: Executed deep modem log analysis using the LOGEL tool to troubleshoot Layer 3 network messages (NAS and RRC), leveraging 3GPP NAS protocol expertise to identify root causes of certification failures.</p>
+            </details>
+
+            <details class="experience-item">
+                <summary>Field Test Intern | MOTS (Aug 2015 – Feb 2016)</summary>
+                <p>• International Field Testing: Conducted field testing for Nokia devices across Mexico, Colombia, and Chile. Utilized CMW500 and CMU200 testing equipment for RF protocol validation based on 3GPP standards.
+
+                • Test Engineering & Reporting: Engineered a novel power consumption testing protocol to provide clients with accurate battery life profiles across various use cases. Created test plans and delivered daily technical reports directly to Nokia engineers.</p>
+            </details>
+
+            <details class="experience-item">
+                <summary>Early Career & Entrepreneurship (2010 – 2015)</summary>
+                <p>• E-commerce Co-Founder (2010 - 2014): Managed a successful online electronics repair business. Performed advanced GPU reballing on over 2,000 Xbox 360 consoles and hundreds of laptops, maintaining a near-zero failure rate and ensuring customer satisfaction with a 6-month warranty.
+
+                • Radio UDG Cabin Operator Intern (2014 - 2015): Operated live broadcast cabin equipment, demonstrating high adaptability and precise timing to follow segment rundowns, while independently managing music programming during special live broadcasts.</p>
+            </details>
+        </div>
+
+        <!-- Core Competencies & Skills -->
+        <div class="card card-gray">
+            <h2>Core Competencies & Technical Skills</h2>
+            <p>• Project Management & Leadership: Technical Project Management, Cross-Functional Team Leadership (HW/FW/Web), PLM, MS Project.
+            • Telecommunications & Networking: 3GPP Standards (Rel 13 & 14), LTE, NAS & RRC, TCP/IP, AT Commands, Cellular Triangulation.
+            • Log Analysis & Troubleshooting: QXDM, LOGEL, Wireshark, Root Cause Analysis.
+            • Programming & Scripting: Python (Pandas, NumPy, Matplotlib, Tkinter, Django), Embedded C, HTML/CSS.
+            • Hardware & Manufacturing: Low-Power IoT Architecture, Firmware QA (I2C, UART), GPS/GNSS Validation.
+            • Mechanical & Field Validation: Basic 3D Modeling (FreeCAD), Plastic Injection Management, Environmental Durability Testing.</p>
+        </div>
+
+    </div>
+
+    <!-- Interactive JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const detailsElements = document.querySelectorAll('details.experience-item');
+            
+            // Detectar si el dispositivo soporta "hover" (Escritorio vs Móvil)
+            const isHoverableDevice = window.matchMedia("(hover: hover)").matches;
+
+            detailsElements.forEach(detail => {
+                const summary = detail.querySelector('summary');
+                
+                if (isHoverableDevice) {
+                    // ==========================================
+                    // LÓGICA PARA PANTALLAS ANCHAS (DESKTOP)
+                    // ==========================================
+                    let expandTimeout;
+                    let collapseTimeout;
+                    let isSticky = false; // Define si el usuario bloqueó la sección abierta con un clic
+
+                    // 1. Interceptar el clic en el título para abrir/cerrar manualmente
+                    summary.addEventListener('click', (e) => {
+                        e.preventDefault(); // Detenemos el comportamiento por defecto de HTML
+                        
+                        if (detail.hasAttribute('open') && isSticky) {
+                            // Si está abierta y bloqueada, el clic la cierra
+                            detail.removeAttribute('open');
+                            isSticky = false;
+                        } else {
+                            // Si estaba cerrada, el clic la abre instantáneamente y la bloquea
+                            detail.setAttribute('open', 'true');
+                            isSticky = true;
+                        }
+                    });
+
+                    // 2. Clic en cualquier parte del contenido (párrafos) mantiene la sección abierta (sticky)
+                    detail.addEventListener('click', (e) => {
+                        if (e.target !== summary && !summary.contains(e.target)) {
+                            isSticky = true;
+                        }
+                    });
+
+                    // 3. Lógica de Hover (Entrada y Salida con 0.5s de delay)
+                    detail.addEventListener('mouseenter', () => {
+                        clearTimeout(collapseTimeout); // Cancelamos cualquier orden de cierre pendiente
+                        
+                        if (!isSticky && !detail.hasAttribute('open')) {
+                            expandTimeout = setTimeout(() => {
+                                detail.setAttribute('open', 'true');
+                            }, 500);
+                        }
+                    });
+
+                    detail.addEventListener('mouseleave', () => {
+                        clearTimeout(expandTimeout); // Cancelamos cualquier orden de apertura pendiente
+                        
+                        if (!isSticky && detail.hasAttribute('open')) {
+                            collapseTimeout = setTimeout(() => {
+                                detail.removeAttribute('open');
+                            }, 500);
+                        }
+                    });
+                } 
+                // ==========================================
+                // LÓGICA PARA DISPOSITIVOS MÓVILES (TOUCH)
+                // ==========================================
+                // En móviles, el navegador por defecto maneja perfectamente el comportamiento:
+                // Al tocar el <summary> se abre, y al tocarlo de nuevo se cierra.
+                // Permite múltiples secciones abiertas a la vez. No agregamos eventos extra.
+            });
+        });
+    </script>
+</body>
+</html>
