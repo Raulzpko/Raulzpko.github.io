@@ -217,6 +217,18 @@
             • Mechanical & Field Validation: Basic 3D Modeling (FreeCAD), Plastic Injection Management, Environmental Durability Testing.</p>
         </div>
 
+        <!-- Education -->
+        <div class="card card-white">
+            <h2>Education</h2>
+            <p><strong>Ingeniería en Comunicaciones y Electrónica (2010 – 2015)</strong>
+            CUCEI Universidad de Guadalajara
+            • Specialized in embedded systems.
+            • GPA: 85.4</p>
+            
+            <p><strong>PMI Method Course (2021)</strong>
+            ITESO</p>
+        </div>
+
     </div>
 
     <!-- Interactive JavaScript -->
@@ -240,14 +252,14 @@
 
                     // 1. Interceptar el clic en el título para abrir/cerrar manualmente
                     summary.addEventListener('click', (e) => {
-                        e.preventDefault(); // Detenemos el comportamiento por defecto de HTML
+                        e.preventDefault(); 
                         
                         if (detail.hasAttribute('open') && isSticky) {
-                            // Si está abierta y bloqueada, el clic la cierra
+                            
                             detail.removeAttribute('open');
                             isSticky = false;
                         } else {
-                            // Si estaba cerrada, el clic la abre instantáneamente y la bloquea
+                            
                             detail.setAttribute('open', 'true');
                             isSticky = true;
                         }
@@ -262,7 +274,7 @@
 
                     // 3. Lógica de Hover (Entrada y Salida con 0.5s de delay)
                     detail.addEventListener('mouseenter', () => {
-                        clearTimeout(collapseTimeout); // Cancelamos cualquier orden de cierre pendiente
+                        clearTimeout(collapseTimeout); 
                         
                         if (!isSticky && !detail.hasAttribute('open')) {
                             expandTimeout = setTimeout(() => {
@@ -272,7 +284,7 @@
                     });
 
                     detail.addEventListener('mouseleave', () => {
-                        clearTimeout(expandTimeout); // Cancelamos cualquier orden de apertura pendiente
+                        clearTimeout(expandTimeout); 
                         
                         if (!isSticky && detail.hasAttribute('open')) {
                             collapseTimeout = setTimeout(() => {
@@ -281,12 +293,7 @@
                         }
                     });
                 } 
-                // ==========================================
-                // LÓGICA PARA DISPOSITIVOS MÓVILES (TOUCH)
-                // ==========================================
-                // En móviles, el navegador por defecto maneja perfectamente el comportamiento:
-                // Al tocar el <summary> se abre, y al tocarlo de nuevo se cierra.
-                // Permite múltiples secciones abiertas a la vez. No agregamos eventos extra.
+                
             });
         });
     </script>
